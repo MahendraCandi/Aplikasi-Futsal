@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportTeam" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9e7b8892-5953-406d-b8ec-b3168ac973e0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     team.`kd_team` AS team_kd_team,
+     team.`tgl_daftar` AS team_tgl_daftar,
+     team.`nm_team` AS team_nm_team,
+     team.`kapten` AS team_kapten,
+     team.`no_hp` AS team_no_hp,
+     team.`status` AS team_status
+FROM
+     `team` team]]>
+	</queryString>
+	<field name="team_kd_team" class="java.lang.String"/>
+	<field name="team_tgl_daftar" class="java.sql.Date"/>
+	<field name="team_nm_team" class="java.lang.String"/>
+	<field name="team_kapten" class="java.lang.String"/>
+	<field name="team_no_hp" class="java.lang.String"/>
+	<field name="team_status" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="e84b3e41-8984-4ad2-befa-05dffeb7af45"/>
+				<staticText>
+					<reportElement x="20" y="20" width="247" height="43" forecolor="#FFFFFF" uuid="f219f7c1-5fff-4a09-949a-11e32eee071e"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Aplikasi Futsal]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="1b129da0-86ae-4f2c-9883-0fc736160904"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Laporan Team]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="06d335f0-f0e8-4c5b-b41f-0980e774c623"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="82" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="0aa21d2d-f233-42d3-b9c7-9331ca6c01e7"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Team]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="82" y="0" width="106" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="09cb97dc-5ae7-4f57-9243-57ea24c45fe6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Daftar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="188" y="0" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="344434f2-ce4d-4a49-88d2-6511b06028c4"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Team]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="280" y="0" width="78" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="e3e3b693-b47a-4e25-8a22-6cc31cf418b1"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kapten]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="358" y="0" width="105" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="d27ad52a-4502-4373-a24b-335f7199fa43"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No. HP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="463" y="0" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="dfc2f1d3-8c8d-45e1-a394-4277da79b3ef"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="2441215d-2dc1-48ef-a37a-e78f9e0128ab"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="82" height="20" uuid="33a70c06-35c4-4759-b607-8333567c77cf"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{team_kd_team}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="82" y="0" width="106" height="20" uuid="024c5d2c-adf8-4e3d-9a9e-bf2cffef7d26"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MMMM/yyyy").format($F{team_tgl_daftar})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="188" y="0" width="92" height="20" uuid="e8aeba96-03cb-4d8f-b804-1bae5344ad0a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{team_nm_team}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="358" y="0" width="105" height="20" uuid="70f6056b-ecae-4fba-bda8-b5ce62228c3c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{team_no_hp}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="463" y="0" width="92" height="20" uuid="ed90c9f1-351f-4f18-9646-43a9118d12c6"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{team_status}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="280" y="0" width="78" height="19" uuid="f32fea3a-b88b-4490-b085-9e85699aa6bd"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{team_kapten}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="ab4d1c3c-d92c-4f36-ae31-ca28db870611"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="cb305ffb-5636-4f7d-9dd7-436aeebc3b9e"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="5958048b-5b2f-45c5-b08f-17d8e165d1e3"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
